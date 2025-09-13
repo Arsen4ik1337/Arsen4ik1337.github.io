@@ -3,92 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мое резюме</title>
+    <title>Извинения и признания</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
         }
-        .resume {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .section {
+        
+        .main-title {
+            font-size: 3em;
+            color: pink;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        .btn {
-            background-color: #007bff;
+        
+        button {
+            margin: 5px;
+            padding: 15px 25px;
+            font-size: 16px;
+            background-color: #ff69b4;
             color: white;
-            padding: 10px 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-right: 10px;
+            transition: background-color 0.3s;
         }
-        .btn:hover {
-            background-color: #0056b3;
+        
+        button:hover {
+            background-color: #d62728;
         }
-        .hidden {
-            display: none;
+        
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div class="resume">
-        <h1>Иванов Иван Иванович</h1>
-        <p><strong>Контактная информация:</strong> +7 (999) 123-45-67, email@example.com</p>
 
-        <div class="section">
-            <h2>Образование</h2>
-            <button class="btn" onclick="showEducation()">Показать образование</button>
-            <div id="education" class="hidden">
-                <p>Московский государственный университет, 2015-2019</p>
-                <p>Специальность: Информационные технологии</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Опыт работы</h2>
-            <button class="btn" onclick="showExperience()">Показать опыт</button>
-            <div id="experience" class="hidden">
-                <p><strong>Компания А</strong> - Разработчик, 2020-н.в.</p>
-                <p><strong>Компания Б</strong> - Младший данжен слейв, 2019-2020</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Навыки</h2>
-            <button class="btn" onclick="showSkills()">Показать навыки</button>
-            <div id="skills" class="hidden">
-                <ul>
-                    <li>HTML/CSS</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                </ul>
-            </div>
-        </div>
+    <div class="main-title">Пипсик, я тебя люблю</div>
+    
+    <div id="buttons">
+        <button onclick="showMessage('Прости меня, пожалуйста, я очень скучаю!')">Извинение 1</button>
+        <button onclick="showMessage('Я не могу без тебя ни минуты!')">Извинение 2</button>
+        <button onclick="showMessage('Ты самый дорогой для меня человек')">Извинение 3</button>
+        <button onclick="showMessage('Люблю тебя всем сердцем')">Извинение 4</button>
+        <button onclick="showMessage('Обещаю, больше так не буду')">Извинение 5</button>
     </div>
+    
+    <div id="message"></div>
 
     <script>
-        function showEducation() {
-            const education = document.getElementById('education');
-            education.classList.toggle('hidden');
-        }
-
-        function showExperience() {
-            const experience = document.getElementById('experience');
-            experience.classList.toggle('hidden');
-        }
-
-        function showSkills() {
-            const skills = document.getElementById('skills');
-            skills.classList.toggle('hidden');
+        function showMessage(text) {
+            document.getElementById('message').innerText = text;
         }
     </script>
+
 </body>
 </html>
+
 
