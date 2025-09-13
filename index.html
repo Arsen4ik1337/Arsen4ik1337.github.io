@@ -1,1 +1,94 @@
-HELLO WORD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое резюме</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .resume {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <h1>Иванов Иван Иванович</h1>
+        <p><strong>Контактная информация:</strong> +7 (999) 123-45-67, email@example.com</p>
+
+        <div class="section">
+            <h2>Образование</h2>
+            <button class="btn" onclick="showEducation()">Показать образование</button>
+            <div id="education" class="hidden">
+                <p>Московский государственный университет, 2015-2019</p>
+                <p>Специальность: Информационные технологии</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Опыт работы</h2>
+            <button class="btn" onclick="showExperience()">Показать опыт</button>
+            <div id="experience" class="hidden">
+                <p><strong>Компания А</strong> - Разработчик, 2020-н.в.</p>
+                <p><strong>Компания Б</strong> - Младший разработчик, 2019-2020</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Навыки</h2>
+            <button class="btn" onclick="showSkills()">Показать навыки</button>
+            <div id="skills" class="hidden">
+                <ul>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showEducation() {
+            const education = document.getElementById('education');
+            education.classList.toggle('hidden');
+        }
+
+        function showExperience() {
+            const experience = document.getElementById('experience');
+            experience.classList.toggle('hidden');
+        }
+
+        function showSkills() {
+            const skills = document.getElementById('skills');
+            skills.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
+
