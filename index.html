@@ -1,73 +1,168 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Извинения и признания</title>
+    <title>Моё резюме</title>
+
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+
+        body
+        {
             margin: 0;
-            background-color: #f0f8ff;
-            font-family: 'Arial', sans-serif;
+            padding: 0;
+
+            background-color: #e9eef5;
+
+            font-family: Arial, sans-serif;
         }
-        
-        .main-title {
-            font-size: 3em;
-            color: pink;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        button {
-            margin: 5px;
-            padding: 15px 25px;
-            font-size: 16px;
-            background-color: #ff69b4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        button:hover {
-            background-color: #d62728;
-        }
-        
-        #message {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #333;
+
+        .card
+        {
+            width: 450px;
+
+            margin: 50px auto;
+
+            background-color: white;
+
+            border-radius: 20px;
+
+            padding: 30px;
+
             text-align: center;
+
+            box-shadow: 0 0 20px gray;
         }
+
+        img
+        {
+            width: 200px;
+            height: 200px;
+
+            border-radius: 50%;
+
+            border: 5px solid #4a90e2;
+
+            object-fit: cover;
+        }
+
+        h1
+        {
+            font-size: 36px;
+
+            color: #2c3e50;
+
+            margin-top: 20px;
+
+            transition: 0.3s;
+        }
+
+        h1:hover
+        {
+            color: #e74c3c;
+        }
+
+        p
+        {
+            font-size: 20px;
+
+            color: #555;
+        }
+
+        input
+        {
+            width: 80%;
+
+            padding: 10px;
+
+            margin-top: 15px;
+
+            border-radius: 10px;
+
+            border: 2px solid #4a90e2;
+
+            font-size: 16px;
+        }
+
+        button
+        {
+            margin-top: 15px;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background-color: #4a90e2;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover
+        {
+            background-color: #357abd;
+
+            transform: scale(1.05);
+        }
+
     </style>
+
 </head>
+
 <body>
 
-    <div class="main-title">Пипсик, я тебя люблю</div>
-    
-    <div id="buttons">
-        <button onclick="showMessage('Прости меня, пожалуйста, я очень скучаю!')">Извинение 1</button>
-        <button onclick="showMessage('Я не могу без тебя ни минуты!')">Извинение 2</button>
-        <button onclick="showMessage('Ты самый дорогой для меня человек')">Извинение 3</button>
-        <button onclick="showMessage('Люблю тебя всем сердцем')">Извинение 4</button>
-        <button onclick="showMessage('Обещаю, больше так не буду')">Извинение 5</button>
-    </div>
-    
-    <div id="message"></div>
+<div class="card">
 
-    <script>
-        function showMessage(text) {
-            document.getElementById('message').innerText = text;
-        }
-    </script>
+    <img src="putin.jpg">
+
+    <h1 id="surname">Грязнов</h1>
+
+    <p>Студент Станкина</p>
+
+    <input type="text" id="newSurname" placeholder="Введите новую фамилию">
+
+    <br>
+
+    <button onclick="changeSurname()">
+        Изменить фамилию
+    </button>
+
+    <br>
+
+    <button onclick="changeBackground()">
+        Случайный фон
+    </button>
+
+</div>
+
+<script>
+
+    function changeSurname()
+    {
+        let text =
+            document.getElementById("newSurname").value;
+
+        document.getElementById("surname").innerText =
+            text;
+    }
+
+    function changeBackground()
+    {
+        let color =
+            "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+        document.body.style.backgroundColor = color;
+    }
+
+</script>
 
 </body>
+
 </html>
-
-
